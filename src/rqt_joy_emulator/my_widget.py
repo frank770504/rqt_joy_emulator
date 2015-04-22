@@ -30,35 +30,19 @@ class MyWidget(QWidget):
         style_sheet = ".QWidget { background: url(\"%s\"); }" % image_path
         self.widget.setStyleSheet(style_sheet)
 
-        # Press buttons.
-        self.aButton.pressed.connect(lambda: self.pressButton('A'))
-        self.bButton.pressed.connect(lambda: self.pressButton('B'))
-        self.xButton.pressed.connect(lambda: self.pressButton('X'))
-        self.yButton.pressed.connect(lambda: self.pressButton('Y'))
-
-        self.startButton.pressed.connect(lambda: self.pressButton('START'))
-        self.backButton.pressed.connect(lambda: self.pressButton('BACK'))
-
-        self.rbButton.pressed.connect(lambda: self.pressButton('RB'))
-        self.lbButton.pressed.connect(lambda: self.pressButton('LB'))
-
-        self.rjButton.pressed.connect(lambda: self.pressButton('RJ'))
-        self.ljButton.pressed.connect(lambda: self.pressButton('LJ'))
-
-        # Release buttons.
-        self.aButton.released.connect(lambda: self.releaseButton('A'))
-        self.bButton.released.connect(lambda: self.releaseButton('B'))
-        self.xButton.released.connect(lambda: self.releaseButton('X'))
-        self.yButton.released.connect(lambda: self.releaseButton('Y'))
-
-        self.startButton.released.connect(lambda: self.releaseButton('START'))
-        self.backButton.released.connect(lambda: self.releaseButton('BACK'))
-
-        self.rbButton.released.connect(lambda: self.releaseButton('RB'))
-        self.lbButton.released.connect(lambda: self.releaseButton('LB'))
-
-        self.rjButton.released.connect(lambda: self.releaseButton('RJ'))
-        self.ljButton.released.connect(lambda: self.releaseButton('LJ'))
+        self.addButton(self.aButton, 'A')
+        self.addButton(self.bButton, 'B')
+        self.addButton(self.xButton, 'X')
+        self.addButton(self.yButton, 'Y')
+ 
+        self.addButton(self.startButton, 'START')
+        self.addButton(self.backButton, 'BACK')
+ 
+        self.addButton(self.rbButton, 'RB')
+        self.addButton(self.lbButton, 'LB')
+ 
+        self.addButton(self.rjButton, 'RJ')
+        self.addButton(self.ljButton, 'LJ')
 
         # Logitech Wired
         self.getButtonIdx = {'A':0,
@@ -81,17 +65,17 @@ class MyWidget(QWidget):
         self.connect(self.namespaceLineEdit, SIGNAL("editingFinished()"),
                      self.handleNamespaceChanged)
 
+    def addButton(self, qbutton, button):
+        qbutton.pressed.connect(lambda: self.pressButton(button))
+        qbutton.released.connect(lambda: self.releaseButton(button))
+
     def pressButton(self, button):
         self.joy_msg.buttons[self.getButtonIdx[button]] = 1
         self.joy_msg.header.stamp = rospy.Time.now()
         self.joy_pub.publish(self.joy_msg)
-        time.sleep(0.1)
-        # Release Button again.
-#         self.joy_msg.buttons[self.getButtonIdx[button]] = 0
-#         self.joy_msg.header.stamp = rospy.Time.now()
-#         self.joy_pub.publish(self.joy_msg)
 
     def releaseButton(self, button):
+        time.sleep(0.1)
         self.joy_msg.buttons[self.getButtonIdx[button]] = 0
         self.joy_msg.header.stamp = rospy.Time.now()
         self.joy_pub.publish(self.joy_msg)
