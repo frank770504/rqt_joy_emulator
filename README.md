@@ -1,1 +1,1 @@
-![alt tag](https://raw.github.com/otim/rqt_joy_emulator/screen_shoot.png)
+![alt tag](screen_shot.png?raw=true)
