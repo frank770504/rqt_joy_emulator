@@ -1,0 +1,19 @@
+<library path="src">
+  <class name="My Plugin" type="rqt_joy_emulator.my_module.MyPlugin" base_class_type="rqt_gui_py::Plugin">
+    <description>
+      A Python GUI plugin to emulator ros joystick commands.
+    </description>
+    <qtgui>
+      <group>
+        <label>Robot Tools</label>
+      </group>
+      <!--group>
+        <label>Subgroup</label>
+      </group>
+      -->
+      <label>Joy Emulator</label>
+      <icon type="theme">applications-games</icon>
+      <statustip>A Python GUI plugin to emulator ros joystick commands.</statustip>
+    </qtgui>
+  </class>
+</library>
