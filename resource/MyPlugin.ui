@@ -43,6 +43,9 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="startButton">
     <property name="geometry">
@@ -58,6 +61,9 @@
     </property>
     <property name="checkable">
      <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="xButton">
@@ -75,6 +81,9 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="yButton">
     <property name="geometry">
@@ -90,6 +99,9 @@
     </property>
     <property name="checkable">
      <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="bButton">
@@ -107,6 +119,9 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="aButton">
     <property name="geometry">
@@ -122,6 +137,9 @@
     </property>
     <property name="checkable">
      <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="rbButton">
@@ -139,6 +157,9 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="lbButton">
     <property name="geometry">
@@ -154,6 +175,9 @@
     </property>
     <property name="checkable">
      <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="ljButton">
@@ -171,6 +195,9 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="rjButton">
     <property name="geometry">
@@ -186,6 +213,22 @@
     </property>
     <property name="checkable">
      <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="namespaceLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>30</y>
+      <width>120</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>namespace</string>
     </property>
    </widget>
   </widget>
